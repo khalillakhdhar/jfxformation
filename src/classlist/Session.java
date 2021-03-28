@@ -43,11 +43,11 @@ public class Session implements DaoSession {
 		this.duree = duree;
 	}
 
-	public String getId_formation() {
+	public String getformation() {
 		return formation;
 	}
 
-	public void setId_formation(String formation) {
+	public void setformation(String formation) {
 		this.formation = formation;
 	}
 
@@ -67,8 +67,8 @@ public class Session implements DaoSession {
 
 			Connexion c = new Connexion();
 			java.sql.PreparedStatement statement = c.conn.prepareStatement(
-					"INSERT INTO `session`( `date`, `id_formation`, `duree`) VALUES ('" + this.getDate() + "','"
-							+ this.getId_formation() + "','" + this.getDuree() + "')");
+					"INSERT INTO `session`( `date`, `formation`, `duree`) VALUES ('" + this.getDate() + "','"
+							+ this.getformation()+ "','" + this.getDuree() + "')");
 			statement.executeUpdate();
 			System.out.println("ajouté avec succés");
 		} catch (SQLException ex) {

@@ -113,6 +113,7 @@ content.getChildren().setAll(node);
         x.setDescription(rs.getString("description"));
         x.setTitre(rs.getString("titre"));
         x.setPrix(rs.getInt("prix"));
+        
         list.add(x);
 
     }
@@ -199,6 +200,7 @@ content.getChildren().setAll(node);
      titre.setText(String.valueOf(m.getTitre()));
      prix.setText(String.valueOf(m.getPrix()));
           description.setText(String.valueOf(m.getDescription()));
+          label.setText(String.valueOf(m.getId()));
 
      id.setText(String.valueOf(m.getId()));
      

@@ -23,9 +23,9 @@
       <Text layoutX="35.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Titre" />
       <Text layoutX="35.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Prix" />
       <Text layoutX="35.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Description" />
-      <TextArea fx:id="description" layoutX="139.0" layoutY="203.0" prefHeight="101.0" prefWidth="191.0" styleClass="text-field" stylesheets="@Styles.css" />
-      <TextField fx:id="prix" layoutX="123.0" layoutY="146.0" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" stylesheets="@Styles.css" />
-      <TextField fx:id="titre" layoutX="123.0" layoutY="96.0" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" stylesheets="@Styles.css" />
+      <TextArea fx:id="description" layoutX="153.0" layoutY="202.0" prefHeight="101.0" prefWidth="191.0" promptText="Description" styleClass="text-field" stylesheets="@Styles.css" />
+      <TextField fx:id="prix" layoutX="153.0" layoutY="146.0" prefHeight="36.0" prefWidth="191.0" promptText="prix" styleClass="text-field" stylesheets="@Styles.css" />
+      <TextField fx:id="titre" layoutX="153.0" layoutY="86.0" prefHeight="36.0" prefWidth="191.0" promptText="titre" styleClass="text-field" stylesheets="@Styles.css" />
       <TableView fx:id="table" layoutX="61.0" layoutY="353.0" prefHeight="200.0" prefWidth="693.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="75.0" text="Id" />
@@ -34,6 +34,6 @@
             <TableColumn fx:id="tdescription" prefWidth="373.0" text="Desciption" />
         </columns>
       </TableView>
-      <Button layoutX="678.0" layoutY="146.0" mnemonicParsing="false" onAction="#handlenextAction" styleClass="custom-button" stylesheets="@Styles.css" text="Sessions" />
+      <Button layoutX="678.0" layoutY="146.0" mnemonicParsing="false" onAction="#handlenextAction" prefHeight="68.0" prefWidth="87.0" styleClass="custom-button" stylesheets="@Styles.css" text="Sessions" />
     </children>
 </AnchorPane>
