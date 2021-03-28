@@ -35,5 +35,6 @@
         </columns>
       </TableView>
       <Button layoutX="678.0" layoutY="146.0" mnemonicParsing="false" onAction="#handlenextAction" prefHeight="68.0" prefWidth="87.0" styleClass="custom-button" stylesheets="@Styles.css" text="Sessions" />
+      <Label fx:id="message" layoutX="551.0" layoutY="22.0" style="-fx-text-fill: red;" />
     </children>
 </AnchorPane>

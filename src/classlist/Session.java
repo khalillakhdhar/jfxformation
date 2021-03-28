@@ -108,7 +108,7 @@ public class Session implements DaoSession {
 			c.conn.prepareStatement(sql); statement.setInt(1,ids);
 			
 			statement.execute();
-			System.out.println("supprim� avec succ�s");
+			System.out.println("supprimé avec succés");
 			} catch (SQLException ex) {
 				System.out.println("erreur lors de la suppression "+ex.toString());
 				

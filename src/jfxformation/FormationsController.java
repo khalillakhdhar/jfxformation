@@ -6,7 +6,6 @@
 package jfxformation;
 
 import classlist.Formation;
-import classlist.Model;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -21,8 +20,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -30,7 +27,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import javax.swing.text.TableView;
 
 /**
@@ -42,6 +38,8 @@ public class FormationsController implements Initializable {
 AnchorPane content;
     @FXML
     private Label label;
+      @FXML
+    private Label message;
        @FXML
     private TextField titre;
      @FXML
@@ -122,18 +120,15 @@ content.getChildren().setAll(node);
     private void handleButtonAction(ActionEvent event) throws SQLException, IOException {
         System.out.println("Ajout!");
       add();
-      refresh();
     }
        @FXML
     private void handleModifAction(ActionEvent event) throws SQLException, IOException {
          up();
-      refresh();
     }
     
           @FXML
     private void handledeleteAction(ActionEvent event) throws SQLException, IOException {
       delete();
-      refresh();
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -167,30 +162,48 @@ content.getChildren().setAll(node);
         }
     }    
     
-    void add() throws SQLException
+    void add() throws IOException 
     {
+                   try
+  {
     Formation f= new Formation(titre.getText(), Integer.parseInt(prix.getText()), description.getText());
     f.createFormation();
-          read();
-
+          refresh();
+  }
+                      catch(IOException | NumberFormatException ex)
+          {
+          message.setText("prix non numérique!");
+          
+          }
     
     }
-      void up() throws SQLException
+      void up() throws SQLException, IOException
     {
+                 try
+  {
     Formation f= new Formation(titre.getText(), Integer.parseInt(prix.getText()), description.getText());
     f.setId(Integer.parseInt(label.getText()));
     f.updateFormation(f.getId());
-          read();
-
-    
+          refresh();
+  }              catch(Exception ex)
+          {
+          message.setText("titre existant ou prix non numérique!");
+          
+          }
     }
           void delete() throws SQLException
     {
-    Formation f= new Formation(titre.getText(), Integer.parseInt(prix.getText()), description.getText());
+        try{
+    Formation f= new Formation();
     f.setId(Integer.parseInt(label.getText()));
     f.deleteFormation(f.getId());
-          read();
-
+refresh();
+        }
+              catch(Exception ex)
+          {
+          message.setText("titre existant ou prix non numérique!");
+          
+          }
     
     }
      void plot()

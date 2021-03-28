@@ -51,7 +51,8 @@ AnchorPane content;
     private DatePicker date;
      @FXML
     private TextField duree;
-     
+       @FXML
+    private Label message;
 
        @FXML
     private TableColumn<Model, Integer> id;
@@ -163,18 +164,15 @@ try {
     private void handleButtonAction(ActionEvent event) throws SQLException, IOException {
         System.out.println("Ajout!");
       add();
-      refresh();
     }
        @FXML
     private void handleModifAction(ActionEvent event) throws SQLException, IOException {
          up();
-      refresh();
     }
  
           @FXML
     private void handledeleteAction(ActionEvent event) throws SQLException, IOException {
       delete();
-      refresh();
     }
 //    
     
@@ -227,28 +225,52 @@ try {
 
  void add() throws SQLException
     {
+              try
+  {
     Session f= new Session(Integer.parseInt(duree.getText()), liste.getSelectionModel().getSelectedItem().toString(), date.getValue().toString());
     f.createSession();
-    
-   
+        refresh();
+
+  }
+   catch(Exception ex)
+          {
+          message.setText("veuillez remplir correctement");
+          
+          }
 
     
     }
       void up() throws SQLException
     {
+         try
+  {
      Session f= new Session(Integer.parseInt(duree.getText()), liste.getSelectionModel().getSelectedItem().toString(), date.getValue().toString());
      f.setId(Integer.parseInt(label.getText()));
     f.updateSession(Integer.parseInt(label.getText()));
-
+    refresh();
+  }
+ catch(Exception ex)
+          {
+          message.setText("veuillez choisir une session");
+          
+          }
     
     }
           void delete() throws SQLException
     {
-  Session f= new Session(Integer.parseInt(duree.getText()), liste.getSelectionModel().getSelectedItem().toString(), date.getValue().toString());
+  Session f= new Session();
+  try
+  {
      f.setId(Integer.parseInt(label.getText()));
     f.deleteSession(Integer.parseInt(label.getText()));
+          refresh();
 
-    
+  }
+  catch(Exception ex)
+          {
+          message.setText("veuillez choisir une session");
+          
+          }
     }    
     }
 
