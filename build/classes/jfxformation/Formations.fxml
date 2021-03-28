@@ -10,22 +10,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="631.0" prefWidth="808.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxformation.FormationsController">
+<AnchorPane id="AnchorPane" fx:id="content" prefHeight="631.0" prefWidth="808.0" style="-fx-background-color: #C0C0C0;" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxformation.FormationsController">
     <children>
-        <Button fx:id="button" layoutX="525.0" layoutY="105.0" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="83.0" text="Ajout" />
+        <Button fx:id="button" layoutX="518.0" layoutY="91.0" onAction="#handleButtonAction" prefHeight="36.0" prefWidth="120.0" styleClass="custom-button" stylesheets="@Styles.css" text="Ajout" />
         <Label fx:id="label" layoutX="516.0" layoutY="30.0" minHeight="16" minWidth="69" />
-      <Button fx:id="modif" layoutX="525.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleModifAction" text="Modification" />
-      <Button fx:id="supression" layoutX="525.0" layoutY="219.0" onAction="#handledeleteAction" prefHeight="25.0" prefWidth="83.0" text="Supression" />
+      <Button fx:id="modif" layoutX="518.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleModifAction" prefHeight="49.0" prefWidth="127.0" styleClass="custom-button" stylesheets="@Styles.css" text="Modification" />
+      <Button fx:id="supression" layoutX="517.0" layoutY="241.0" onAction="#handledeleteAction" prefHeight="49.0" prefWidth="127.0" styleClass="custom-button" stylesheets="@Styles.css" text="Supression" />
       <Text layoutX="204.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des formation">
          <font>
             <Font name="System Bold Italic" size="27.0" />
          </font></Text>
-      <Text layoutX="35.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titre" />
-      <Text layoutX="35.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
-      <Text layoutX="35.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
-      <TextArea fx:id="description" layoutX="139.0" layoutY="203.0" prefHeight="101.0" prefWidth="191.0" />
-      <TextField fx:id="prix" layoutX="123.0" layoutY="146.0" prefHeight="25.0" prefWidth="191.0" />
-      <TextField fx:id="titre" layoutX="123.0" layoutY="96.0" prefHeight="25.0" prefWidth="191.0" />
+      <Text layoutX="35.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Titre" />
+      <Text layoutX="35.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Prix" />
+      <Text layoutX="35.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Description" />
+      <TextArea fx:id="description" layoutX="139.0" layoutY="203.0" prefHeight="101.0" prefWidth="191.0" styleClass="text-field" stylesheets="@Styles.css" />
+      <TextField fx:id="prix" layoutX="123.0" layoutY="146.0" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" stylesheets="@Styles.css" />
+      <TextField fx:id="titre" layoutX="123.0" layoutY="96.0" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" stylesheets="@Styles.css" />
       <TableView fx:id="table" layoutX="61.0" layoutY="353.0" prefHeight="200.0" prefWidth="693.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="75.0" text="Id" />
@@ -34,6 +34,6 @@
             <TableColumn fx:id="tdescription" prefWidth="373.0" text="Desciption" />
         </columns>
       </TableView>
-      <Button layoutX="678.0" layoutY="146.0" mnemonicParsing="false" onAction="#handlenextAction" text="Sessions" />
+      <Button layoutX="678.0" layoutY="146.0" mnemonicParsing="false" onAction="#handlenextAction" styleClass="custom-button" stylesheets="@Styles.css" text="Sessions" />
     </children>
 </AnchorPane>

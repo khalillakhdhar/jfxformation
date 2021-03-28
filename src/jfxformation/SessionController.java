@@ -20,8 +20,10 @@ import classlist.Formation;
 import classlist.Model;
 
 import classlist.Session;
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
@@ -29,15 +31,18 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
  * @author khali
  */
+
 public class SessionController implements Initializable {
      ObservableList<String> list = FXCollections.observableArrayList();
-
+@FXML
+AnchorPane content;
      @FXML
      ChoiceBox liste;
       @FXML
@@ -76,19 +81,22 @@ public class SessionController implements Initializable {
      */
           
          
-public void refresh(){               
-    try {
-        
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Session.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));  
-            stage.show();
-     //       jfxformation.Jfxformation.stg.close();
-    } catch(Exception e) {
-       e.printStackTrace();
-      }
+public void refresh() throws IOException{               
+
+Node node;
+node = (Node)FXMLLoader.load(getClass().getResource("Session.fxml"));
+content.getChildren().setAll(node);
  }
+
+public void switching() throws IOException{               
+ Node node;
+node = (Node)FXMLLoader.load(getClass().getResource("Formations.fxml"));
+content.getChildren().setAll(node);
+ }
+ @FXML
+    private void handlenextAction(ActionEvent event) throws IOException {
+      switching();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -152,19 +160,19 @@ try {
     }    
     
      @FXML
-    private void handleButtonAction(ActionEvent event) throws SQLException {
+    private void handleButtonAction(ActionEvent event) throws SQLException, IOException {
         System.out.println("Ajout!");
       add();
       refresh();
     }
        @FXML
-    private void handleModifAction(ActionEvent event) throws SQLException {
+    private void handleModifAction(ActionEvent event) throws SQLException, IOException {
          up();
       refresh();
     }
  
           @FXML
-    private void handledeleteAction(ActionEvent event) throws SQLException {
+    private void handledeleteAction(ActionEvent event) throws SQLException, IOException {
       delete();
       refresh();
     }

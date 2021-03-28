@@ -20,6 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -28,6 +29,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javax.swing.text.TableView;
 
@@ -36,7 +38,8 @@ import javax.swing.text.TableView;
  * @author khali
  */
 public class FormationsController implements Initializable {
-    
+    @FXML
+AnchorPane content;
     @FXML
     private Label label;
        @FXML
@@ -72,30 +75,32 @@ void initiale() throws SQLException
 
 }
 
-public void refresh(){               
-    try {
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Formations.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));  
-            stage.show();
-            //Formations.stg.close();
-    } catch(Exception e) {
-       e.printStackTrace();
-      }
+         
+public void refresh() throws IOException{               
+//    try {
+//        
+//    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Session.fxml"));
+//            Parent root = (Parent) fxmlLoader.load();
+//            Stage stage = new Stage();
+//            stage.setScene(new Scene(root));  
+//            stage.show();
+//     //       jfxformation.Jfxformation.stg.close();
+//    } catch(Exception e) {
+//       e.printStackTrace();
+//      }
+Node node;
+node = (Node)FXMLLoader.load(getClass().getResource("Formations.fxml"));
+content.getChildren().setAll(node);
  }
-public void switching(){               
-    try {
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Session.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));  
-            stage.show();
-            //Formations.stg.close();
-    } catch(Exception e) {
-       e.printStackTrace();
-      }
+public void switching() throws IOException{               
+ Node node;
+node = (Node)FXMLLoader.load(getClass().getResource("Session.fxml"));
+content.getChildren().setAll(node);
  }
+ @FXML
+    private void handlenextAction(ActionEvent event) throws IOException {
+      switching();
+    }
  void read() throws SQLException
  {
  
@@ -113,22 +118,19 @@ public void switching(){
     }
  }
     @FXML
-    private void handleButtonAction(ActionEvent event) throws SQLException {
+    private void handleButtonAction(ActionEvent event) throws SQLException, IOException {
         System.out.println("Ajout!");
       add();
       refresh();
     }
        @FXML
-    private void handleModifAction(ActionEvent event) throws SQLException {
+    private void handleModifAction(ActionEvent event) throws SQLException, IOException {
          up();
       refresh();
     }
-     @FXML
-    private void handlenextAction(ActionEvent event) {
-      switching();
-    }
+    
           @FXML
-    private void handledeleteAction(ActionEvent event) throws SQLException {
+    private void handledeleteAction(ActionEvent event) throws SQLException, IOException {
       delete();
       refresh();
     }
