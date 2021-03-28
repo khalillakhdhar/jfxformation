@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -33,18 +34,19 @@
       </TableView>
       <Text layoutX="62.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Formation" />
       <ChoiceBox fx:id="liste" layoutX="149.0" layoutY="249.0" prefWidth="150.0" />
-      <Button layoutX="581.0" layoutY="108.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="174.0" text="Ajouter">
+      <Button layoutX="581.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="174.0" text="Ajouter">
          <font>
             <Font size="19.0" />
          </font></Button>
-      <Button layoutX="581.0" layoutY="171.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="174.0" text="Modifier" textAlignment="CENTER">
+      <Button layoutX="581.0" layoutY="171.0" mnemonicParsing="false" onAction="#handleModifAction" prefHeight="42.0" prefWidth="174.0" text="Modifier" textAlignment="CENTER">
          <font>
             <Font size="19.0" />
          </font></Button>
-      <Button layoutX="577.0" layoutY="233.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="182.0" text="Supprimer">
+      <Button layoutX="577.0" layoutY="233.0" mnemonicParsing="false" onAction="#handledeleteAction" prefHeight="42.0" prefWidth="182.0" text="Supprimer">
          <font>
             <Font size="19.0" />
          </font></Button>
       <Text layoutX="446.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Label fx:id="label" layoutX="406.0" layoutY="213.0" text="Label" />
    </children>
 </AnchorPane>

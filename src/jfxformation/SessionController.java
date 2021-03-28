@@ -78,6 +78,7 @@ public class SessionController implements Initializable {
          
 public void refresh(){               
     try {
+        
     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Session.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
@@ -115,10 +116,14 @@ try {
                 x.setTitre(rs.getString("titre"));
                x.setPrix(rs.getInt("prix"));
                x.setDuree(rs.getInt("duree"));
+                   x.setDate(rs.getString("date"));
+
                 elements.add(x);
                 
             }
             id.setCellValueFactory(new PropertyValueFactory<>("id"));
+                        tdate.setCellValueFactory(new PropertyValueFactory<>("date"));
+
             ttitre.setCellValueFactory(new PropertyValueFactory<>("titre"));
             tprix.setCellValueFactory(new PropertyValueFactory<>("prix"));
             tdescription.setCellValueFactory(new PropertyValueFactory<>("description"));
