@@ -19,7 +19,7 @@ public class Jfxformation extends Application {
     static Stage stg;
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Session.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Formation.fxml"));
         
         Scene scene = new Scene(root);
         
