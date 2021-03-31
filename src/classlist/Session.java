@@ -149,7 +149,7 @@ public class Session implements DaoSession {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
-		String query="SELECT AVG(session.prix) FROM `session`,formation";
+		String query="SELECT AVG(formation.prix) FROM formation";
 		Connexion c = new Connexion();
 		PreparedStatement pst;
 		pst = (PreparedStatement) c.conn.prepareStatement(query);
