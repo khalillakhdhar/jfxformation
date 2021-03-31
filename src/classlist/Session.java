@@ -129,5 +129,40 @@ public class Session implements DaoSession {
 		ResultSet rs = (ResultSet) pst.executeQuery();
 		return rs;
 	}
-
+	public ResultSet calcule() throws SQLException {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		String query="SELECT COUNT(session.id) FROM `session`,formation";
+		Connexion c = new Connexion();
+		PreparedStatement pst;
+		pst = (PreparedStatement) c.conn.prepareStatement(query);
+		pst.executeQuery();
+		ResultSet rs = (ResultSet) pst.executeQuery();
+		return rs;
+	}
+        	public ResultSet Moyenne() throws SQLException {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		String query="SELECT AVG(session.id) FROM `session`,formation";
+		Connexion c = new Connexion();
+		PreparedStatement pst;
+		pst = (PreparedStatement) c.conn.prepareStatement(query);
+		pst.executeQuery();
+		ResultSet rs = (ResultSet) pst.executeQuery();
+		return rs;
+	}
+                	public ResultSet prixmax() throws SQLException {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		String query="SELECT max(prix) FROM `session`";
+		Connexion c = new Connexion();
+		PreparedStatement pst;
+		pst = (PreparedStatement) c.conn.prepareStatement(query);
+		pst.executeQuery();
+		ResultSet rs = (ResultSet) pst.executeQuery();
+		return rs;
+	}
 }
