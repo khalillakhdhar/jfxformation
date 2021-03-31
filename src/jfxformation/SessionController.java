@@ -98,6 +98,11 @@ content.getChildren().setAll(node);
     private void handlenextAction(ActionEvent event) throws IOException {
       switching();
     }
+     @FXML
+    private void handlestat(ActionEvent event) throws IOException {
+ Node node;
+node = (Node)FXMLLoader.load(getClass().getResource("Calendar.fxml"));
+content.getChildren().setAll(node);    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

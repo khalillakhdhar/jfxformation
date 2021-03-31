@@ -52,7 +52,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Statistiques">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Consulter statistiques" />
+                  <MenuItem mnemonicParsing="false" onAction="#handlestat" text="Consulter statistiques" />
                </items>
           </Menu>
         </menus>

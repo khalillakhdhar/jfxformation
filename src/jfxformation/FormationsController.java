@@ -65,6 +65,14 @@ AnchorPane content;
     @FXML
     private TableColumn<Formation, Integer> tprix;
     
+    
+      @FXML
+    private void handlestat(ActionEvent event) throws IOException {
+ Node node;
+node = (Node)FXMLLoader.load(getClass().getResource("Calendar.fxml"));
+content.getChildren().setAll(node);    }
+    
+    
     Formation f=new Formation();
 void initiale() throws SQLException
 {
