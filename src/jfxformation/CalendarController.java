@@ -21,7 +21,9 @@ import javafx.scene.Node;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -33,6 +35,14 @@ public class CalendarController implements Initializable {
 AnchorPane content;
     @FXML
 private BarChart<String,Number> chart;
+    @FXML
+    Text moyenne;
+    @FXML
+    Text nombre;
+      @FXML
+    Text durem;
+          @FXML
+    Text nbf;
     /**
      * Initializes the controller class.
      */
@@ -41,7 +51,12 @@ private BarChart<String,Number> chart;
     
 void stats() throws SQLException    
 {
+    
     ResultSet rs=s.charts();
+    ResultSet prixm=s.Moyenne();
+    if(prixm.first())
+    {
+    }
   
     while (rs.next())
     {

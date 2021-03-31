@@ -7,10 +7,11 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" fx:id="content" prefHeight="553.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxformation.CalendarController">
    <children>
-      <BarChart fx:id="chart" barGap="2.0" categoryGap="6.0" layoutX="91.0" layoutY="77.0" prefHeight="458.0" prefWidth="499.0">
+      <BarChart fx:id="chart" barGap="2.0" categoryGap="6.0" layoutX="26.0" layoutY="81.0" prefHeight="458.0" prefWidth="499.0">
         <xAxis>
           <CategoryAxis label="Formations" side="BOTTOM" />
         </xAxis>
@@ -37,5 +38,14 @@
             </Menu>
          </menus>
       </MenuBar>
+      <Text layoutX="525.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de sessions " />
+      <Text fx:id="nombre" layoutX="731.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nbs" />
+      <Text layoutX="546.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moyenne des prix" />
+      <Text fx:id="moyenne" layoutX="729.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="moyenne" />
+      <Text layoutX="533.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Durée moyenne" />
+      <Text layoutX="78.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 24;" text="Formation par durée" />
+      <Text layoutX="530.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre des formations" />
+      <Text fx:id="durem" layoutX="729.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="729.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    </children>
 </AnchorPane>
