@@ -160,6 +160,21 @@ public class Session implements DaoSession {
                 else 
                     return 0;
 	}
+                   	public int Moyenneduree() throws SQLException {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		String query="SELECT AVG(session.duree) FROM `session`";
+		Connexion c = new Connexion();
+		PreparedStatement pst;
+		pst = (PreparedStatement) c.conn.prepareStatement(query);
+		pst.executeQuery();
+		ResultSet rs = (ResultSet) pst.executeQuery();
+	if(rs.first())
+                return rs.getInt(1);
+                else 
+                    return 0;
+	}
                 	public int nbf() throws SQLException {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub

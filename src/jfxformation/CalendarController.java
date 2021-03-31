@@ -53,10 +53,8 @@ void stats() throws SQLException
 {
     
     ResultSet rs=s.charts();
-    ResultSet prixm=s.Moyenne();
-    if(prixm.first())
-    {
-    }
+   
+  
   
     while (rs.next())
     {
