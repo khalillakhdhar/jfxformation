@@ -129,7 +129,7 @@ public class Session implements DaoSession {
 		ResultSet rs = (ResultSet) pst.executeQuery();
 		return rs;
 	}
-	public ResultSet calcule() throws SQLException {
+	public int calcule() throws SQLException {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
@@ -139,9 +139,13 @@ public class Session implements DaoSession {
 		pst = (PreparedStatement) c.conn.prepareStatement(query);
 		pst.executeQuery();
 		ResultSet rs = (ResultSet) pst.executeQuery();
-		return rs;
+		if(rs.first())
+                return rs.getInt(1);
+                else 
+                    return 0;
+                
 	}
-        	public ResultSet Moyenne() throws SQLException {
+        	public int Moyenne() throws SQLException {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
@@ -151,19 +155,25 @@ public class Session implements DaoSession {
 		pst = (PreparedStatement) c.conn.prepareStatement(query);
 		pst.executeQuery();
 		ResultSet rs = (ResultSet) pst.executeQuery();
-		return rs;
+	if(rs.first())
+                return rs.getInt(1);
+                else 
+                    return 0;
 	}
-                	public ResultSet prixmax() throws SQLException {
+                	public int nbf() throws SQLException {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
-		String query="SELECT max(prix) FROM `session`";
+		String query="SELECT count(id) FROM `formation`";
 		Connexion c = new Connexion();
 		PreparedStatement pst;
 		pst = (PreparedStatement) c.conn.prepareStatement(query);
 		pst.executeQuery();
 		ResultSet rs = (ResultSet) pst.executeQuery();
-		return rs;
+		if(rs.first())
+                return rs.getInt(1);
+                else 
+                    return 0;
 	}
                  public ResultSet charts() throws SQLException {
 		// TODO Auto-generated method stub
