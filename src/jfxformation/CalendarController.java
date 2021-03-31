@@ -54,7 +54,10 @@ void stats() throws SQLException
     
     ResultSet rs=s.charts();
    
-  
+  int moyenneduree=s.Moyenneduree();
+  int totalesession=s.calcule();
+  int prix=s.Moyenne();
+  int nombrefor=s.nbf();
   
     while (rs.next())
     {
