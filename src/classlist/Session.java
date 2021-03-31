@@ -165,4 +165,16 @@ public class Session implements DaoSession {
 		ResultSet rs = (ResultSet) pst.executeQuery();
 		return rs;
 	}
+                 public ResultSet charts() throws SQLException {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		String query="SELECT duree,formation FROM `session`";
+		Connexion c = new Connexion();
+		PreparedStatement pst;
+		pst = (PreparedStatement) c.conn.prepareStatement(query);
+		pst.executeQuery();
+		ResultSet rs = (ResultSet) pst.executeQuery();
+		return rs;
+	}
 }
