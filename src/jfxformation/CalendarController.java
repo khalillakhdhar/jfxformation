@@ -58,7 +58,10 @@ void stats() throws SQLException
   int totalesession=s.calcule();
   int prix=s.Moyenne();
   int nombrefor=s.nbf();
-  
+  moyenne.setText(String.valueOf(prix));
+  nbf.setText(String.valueOf(nombrefor));
+  durem.setText(String.valueOf(moyenneduree));
+  nombre.setText(String.valueOf(totalesession));
     while (rs.next())
     {
         System.out.println(rs.getString("formation")+" "+ rs.getInt("duree"));
