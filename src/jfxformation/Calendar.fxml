@@ -46,6 +46,6 @@
       <Text layoutX="78.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 24;" text="Formation par durée" />
       <Text layoutX="530.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre des formations" />
       <Text fx:id="durem" layoutX="729.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="729.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="nbf" layoutX="729.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    </children>
 </AnchorPane>
