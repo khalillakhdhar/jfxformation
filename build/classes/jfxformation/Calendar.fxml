@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="content" prefHeight="553.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxformation.CalendarController">
    <children>
-      <BarChart fx:id="chart" layoutX="91.0" layoutY="77.0">
+      <BarChart fx:id="chart" barGap="2.0" categoryGap="6.0" layoutX="91.0" layoutY="77.0" prefHeight="458.0" prefWidth="499.0">
         <xAxis>
           <CategoryAxis label="Formations" side="BOTTOM" />
         </xAxis>
